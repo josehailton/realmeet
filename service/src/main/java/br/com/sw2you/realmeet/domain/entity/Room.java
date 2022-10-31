@@ -9,6 +9,7 @@ public class Room {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(name = "name", nullable = false)
     private String name;
 
@@ -18,8 +19,7 @@ public class Room {
     @Column(name = "active", nullable = false)
     private Boolean active;
 
-    public Room() {
-    }
+    public Room() {}
 
     private Room(Long id, String name, Integer seats, Boolean active) {
         this.id = id;
@@ -28,12 +28,12 @@ public class Room {
         this.active = active;
     }
 
-   @PrePersist
-   public void prePersist() {
-        if ( Objects.isNull(active) ) {
+    @PrePersist
+    public void prePersist() {
+        if (Objects.isNull(active)) {
             active = true;
         }
-   }
+    }
 
     public Long getId() {
         return id;
@@ -56,7 +56,12 @@ public class Room {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Room room = (Room) o;
-        return Objects.equals(id, room.id) && Objects.equals(name, room.name) && Objects.equals(seats, room.seats) && Objects.equals(active, room.active);
+        return (
+            Objects.equals(id, room.id) &&
+            Objects.equals(name, room.name) &&
+            Objects.equals(seats, room.seats) &&
+            Objects.equals(active, room.active)
+        );
     }
 
     @Override
@@ -66,12 +71,7 @@ public class Room {
 
     @Override
     public String toString() {
-        return "Room{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", seats=" + seats +
-                ", active=" + active +
-                '}';
+        return "Room{" + "id=" + id + ", name='" + name + '\'' + ", seats=" + seats + ", active=" + active + '}';
     }
 
     public static Builder newBuilder() {
@@ -83,6 +83,7 @@ public class Room {
         private String name;
         private Integer seats;
         private Boolean active;
+
         private Builder() {}
 
         public Builder id(Long id) {
