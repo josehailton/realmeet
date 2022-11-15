@@ -112,7 +112,7 @@ class RoomApiIntegrationTest extends BaseIntegrationTest {
     @Test
     void testUpdateRoomValidationError() {
         assertThrows(
-            HttpClientErrorException.UnprocessableEntity.class,
+                HttpClientErrorException.NotFound.class,
             () -> api.updateRoom(1L, new UpdateRoomDTO().name(null).seats(10))
         );
     }
