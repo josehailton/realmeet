@@ -4,6 +4,9 @@ import br.com.sw2you.realmeet.api.model.AllocationDTO;
 import br.com.sw2you.realmeet.api.model.CreateAllocationDTO;
 import br.com.sw2you.realmeet.domain.repository.AllocationRepository;
 import br.com.sw2you.realmeet.domain.repository.RoomRepository;
+import br.com.sw2you.realmeet.domain.repository.util.DateUtils;
+import br.com.sw2you.realmeet.exception.AllocationCannotBeDeleteException;
+import br.com.sw2you.realmeet.exception.AllocationNotFoundException;
 import br.com.sw2you.realmeet.exception.RoomNotFoundException;
 import br.com.sw2you.realmeet.mapper.AllocationMapper;
 import br.com.sw2you.realmeet.validator.AllocationValidator;
@@ -37,5 +40,17 @@ public class AllocationService {
         var allocation = allocationMapper.fromCreateAllocationDTOToEntity(createAllocationDTO, room);
         allocationRepository.save(allocation);
         return allocationMapper.fromEntityToAllocationDTO(allocation);
+    }
+
+    public void deleteAllocation(Long allocationId) {
+        var allocation = allocationRepository
+            .findById(allocationId)
+            .orElseThrow(() -> new AllocationNotFoundException("Allocation not found: " + allocationId));
+
+        if (allocation.getEndAt().isBefore(DateUtils.now())) {
+            throw new AllocationCannotBeDeleteException();
+        }
+
+        allocationRepository.delete(allocation);
     }
 }

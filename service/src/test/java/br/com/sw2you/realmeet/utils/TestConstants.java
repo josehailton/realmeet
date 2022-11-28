@@ -1,6 +1,6 @@
 package br.com.sw2you.realmeet.utils;
 
-import static br.com.sw2you.realmeet.util.DateUtils.now;
+import static br.com.sw2you.realmeet.domain.repository.util.DateUtils.now;
 
 import java.time.OffsetDateTime;
 

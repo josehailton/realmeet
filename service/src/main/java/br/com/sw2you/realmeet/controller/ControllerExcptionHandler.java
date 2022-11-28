@@ -1,6 +1,6 @@
 package br.com.sw2you.realmeet.controller;
 
-import static br.com.sw2you.realmeet.util.ResponseEntityUtils.notFound;
+import static br.com.sw2you.realmeet.domain.repository.util.ResponseEntityUtils.notFound;
 
 import br.com.sw2you.realmeet.api.model.ResponseError;
 import br.com.sw2you.realmeet.exception.InvalidRequestException;

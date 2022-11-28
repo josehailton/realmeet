@@ -1,4 +1,4 @@
-package br.com.sw2you.realmeet.util;
+package br.com.sw2you.realmeet.domain.repository.util;
 
 import java.time.OffsetDateTime;
 import java.time.ZoneOffset;

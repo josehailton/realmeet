@@ -1,6 +1,6 @@
 package br.com.sw2you.realmeet.unit;
 
-import static br.com.sw2you.realmeet.util.DateUtils.now;
+import static br.com.sw2you.realmeet.domain.repository.util.DateUtils.now;
 import static br.com.sw2you.realmeet.utils.TestDataCreator.newCreateAllocationDTO;
 import static br.com.sw2you.realmeet.validator.ValidatorConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;

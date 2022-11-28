@@ -1,6 +1,6 @@
 package br.com.sw2you.realmeet.domain.entity;
 
-import static br.com.sw2you.realmeet.util.DateUtils.now;
+import static br.com.sw2you.realmeet.domain.repository.util.DateUtils.now;
 import static java.util.Objects.*;
 
 import br.com.sw2you.realmeet.domain.model.Employee;
