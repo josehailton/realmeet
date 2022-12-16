@@ -165,9 +165,6 @@ class AllocationApiFilterIntegrationTest extends BaseIntegrationTest {
 
     @Test
     void testFilterAllocationOrderByInvalidField() {
-        var allocationList = persistAllocation(3);
-        var allocationDTOList = api.listAllocations(null, null, null, null, "invalid", null, null);
-
         assertThrows(
             HttpClientErrorException.UnprocessableEntity.class,
             () -> api.listAllocations(null, null, null, null, "invalid", null, null)
