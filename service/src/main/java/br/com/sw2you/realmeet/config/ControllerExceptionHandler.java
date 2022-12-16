@@ -1,10 +1,10 @@
 package br.com.sw2you.realmeet.config;
 
 import br.com.sw2you.realmeet.api.model.ResponseError;
-import br.com.sw2you.realmeet.domain.repository.util.ResponseEntityUtils;
 import br.com.sw2you.realmeet.exception.AllocationNotFoundException;
 import br.com.sw2you.realmeet.exception.InvalidRequestException;
 import br.com.sw2you.realmeet.exception.RoomNotFoundException;
+import br.com.sw2you.realmeet.util.ResponseEntityUtils;
 import java.util.List;
 import java.util.stream.Collectors;
 import org.springframework.http.HttpStatus;

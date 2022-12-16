@@ -1,4 +1,4 @@
-package br.com.sw2you.realmeet.domain.repository.util;
+package br.com.sw2you.realmeet.util;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
