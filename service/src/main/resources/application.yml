@@ -21,7 +21,7 @@ spring:
   mail:
     host: smtp.gmail.com
     username: hailtonvalerio@gmail.com
-    password: cqasdohupsczqjyd
+    password: twpohhlaxmktwlhk
     from: hailtonvalerio@gmail.com
     properties:
       mail.transport.protocol: smtp
@@ -47,7 +47,7 @@ realmeet:
     templates:
       allocationCreated:
         subject: Novo agendamento de sala criado
-        templateName: allocation-create.html
+        templateName: allocation-created.html
       allocationUpdated:
         subject: Agendamento de sala alterado
         templateName: allocation-updated.html
