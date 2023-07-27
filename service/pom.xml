@@ -20,8 +20,6 @@
         <mockito-junit-jupiter.version>3.7.7</mockito-junit-jupiter.version>
         <prettier-maven-plugin.version>0.10</prettier-maven-plugin.version>
         <jasperreports.version>6.18.1</jasperreports.version>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
     <dependencies>
